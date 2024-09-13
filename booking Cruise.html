@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrCruise Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .logo img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 50%;
+        }
+        .nav-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-menu ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        .nav-menu ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nav-menu ul li a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 20px;
+        }
+        .hmain {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e0f7fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .hmain-image img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .hmain-content {
+            margin-left: 20px;
+        }
+        .hmain-content h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .hmain-content p {
+            font-size: 1.2em;
+            margin: 10px 0 0;
+        }
+        .destinations {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .destinations h2 {
+            text-align: center;
+        }
+        .destination-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .destination-item {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .destination-item img {
+            width: 100%;
+            height: auto;
+        }
+        .destination-item h3 {
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+        .destination-item p {
+            padding: 0 10px;
+            color: #555;
+        }
+        .booking {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .booking h2 {
+            text-align: center;
+        }
+        .booking .container {
+            margin-bottom: 15px;
+        }
+        .booking label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .booking input[type="text"],
+        .booking input[type="number"],
+        .booking select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .booking button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 1em;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .booking button:hover {
+            background-color: #0056b3;
+        }
+        .contact {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .contact h3 {
+            text-align: center;
+        }
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        .contact-info ul li {
+            margin: 10px 0;
+        }
+        .contact-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .form-group button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 1em;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+        .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: #007bff;
+        }
+    </style>
+    <!-- Include FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#"><img src="logo.jpg" alt="KrCruise Logo"></a>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hmain">
+            <div class="hmain-image">
+                <img src="https://images.pexels.com/photos/776030/pexels-photo-776030.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Hero image">
+            </div>
+            <div class="hmain-content">
+                <h1>Welcome to KrCruise Booking Website</h1>
+                <p>Explore stunning cruise destinations and book your next cruise with us.</p>
+            </div>
+        </section>
+        <!-- Cruise Destinations -->
+        <section id="destinations" class="destinations">
+            <h2>Popular Cruise Destinations</h2>
+            <div class="destination-grid">
+                <div class="destination-item" data-price="40000">
+                    <img src="https://images.pexels.com/photos/1417252/pexels-photo-1417252.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Caribbean">
+                    <h3>Caribbean</h3>
+                    <p>Enjoy the sun-soaked beaches and vibrant culture of the Caribbean.</p>
+                </div>
+                <div class="destination-item" data-price="48000">
+                    <img src="https://plus.unsplash.com/premium_photo-1673139081468-d6c013defbc2?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mediterranean">
+                    <h3>Mediterranean</h3>
+                    <p>Discover historic sites and beautiful landscapes in the Mediterranean.</p>
+                </div>
+                <div class="destination-item" data-price="56000">
+                    <img src="https://images.unsplash.com/photo-1515678821046-f1ba75cb9f9e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Alaska">
+                    <h3>Alaska</h3>
+                    <p>Experience the majestic beauty of Alaska's glaciers and wildlife.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Booking Form -->
+        <section id="booking" class="booking">
+            <h2>Book Your Cruise</h2>
+            <form id="bookingForm">
+                <div class="container">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="container">
+                    <label for="destination">Select Destination:</label>
+                    <select id="destination" name="destination" required>
+                        <option value="" disabled selected>Select a cruise package</option>
+                        <option value="Caribbean" data-price="40000">Caribbean - ₹40,000</option>
+                        <option value="Mediterranean" data-price="48000">Mediterranean - ₹48,000</option>
+                        <option value="Alaska" data-price="56000">Alaska - ₹56,000</option>
+                    </select>
+                </div>
+                <div class="container">
+                    <label for="location">Enter Your Location:</label>
+                    <input type="text" id="location" name="location" required>
+                </div>
+                <div class="container" id="totalPriceContainer" style="display: none;">
+                    <label for="total">Total Price:</label>
+                    <input type="number" id="total" name="total" readonly>
+                </div>
+                <div id="confirmationContainer" style="display: none;">
+                    <p id="totalPriceDisplay"></p>
+                    <button type="button" id="confirmBookingButton">Confirm Booking</button>
+                </div>
+                <button type="button" id="calculateButton">Calculate Total</button>
+            </form>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h3>Contact Us</h3>
+            <div class="contact-info">
+                <p>If you have any questions or would like to book a trip, please fill out the form below or contact us using the information provided.</p>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> KrCruise</li>
+                    <li><i class="fas fa-envelope"></i><a href="mailto:krsaivarun1@krcruise.com">krsaivarun1@krcruise.com</a></li>
+                    <li><i class="fas fa-phone"></i><a href="tel:8618266736">8618266736</a></li>
+                </ul>
+            </div>
+            <form action="#" class="form">
+                <div class="form-group">
+                    <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+        <footer>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>KrCruise. All Rights Reserved.</p>
+        </footer>
+    </main>
+    <script>
+        document.getElementById('calculateButton').onclick = function() {
+            var destination = document.getElementById('destination');
+            var location = document.getElementById('location').value;
+            var totalPriceField = document.getElementById('total');
+            var totalPriceContainer = document.getElementById('totalPriceContainer');
+            var confirmationContainer = document.getElementById('confirmationContainer');
+            var totalPriceDisplay = document.getElementById('totalPriceDisplay');
+            
+            var selectedOption = destination.options[destination.selectedIndex];
+            var basePrice = selectedOption ? parseInt(selectedOption.getAttribute('data-price')) : 0;
+            
+            // Location fee
+            var locationFee = 2000;
+            
+            // Calculate total price
+            var totalPrice = basePrice + locationFee;
+            
+            if (destination.value) {
+                if (location.trim() !== '') {
+                    totalPriceField.value = totalPrice;
+                    totalPriceDisplay.textContent = `Total Price: ₹${totalPrice}`;
+                    totalPriceContainer.style.display = 'block';
+                    confirmationContainer.style.display = 'block';
+                    document.getElementById('calculateButton').style.display = 'none';
+                } else {
+                    alert('Please enter your location.');
+                }
+            } else {
+                alert('Please select a destination.');
+            }
+        };
+
+        document.getElementById('confirmBookingButton').onclick = function() {
+            var destination = document.getElementById('destination');
+            var location = document.getElementById('location').value;
+            var totalPriceField = document.getElementById('total');
+            var price = totalPriceField.value;
+            
+            if (price) {
+                localStorage.setItem('bookingDestination', destination.value);
+                localStorage.setItem('bookingPrice', price);
+                localStorage.setItem('bookingLocation', location);
+                window.location.href = 'confirmation.html';
+            } else {
+                alert('Error in calculating the total price.');
+            }
+        };
+    </script>
+</body>
+</html>

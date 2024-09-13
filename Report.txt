@@ -1,0 +1,85 @@
+1. Introduction
+
+The KrCruise Booking website is designed to offer users a seamless experience for exploring and booking cruise trips. This report provides a detailed overview of the website's structure, features, and functionalities, focusing on the HTML and CSS code implementation, user interface design, and booking process.
+
+2. Website Structure
+
+The KrCruise Booking website is divided into several key sections:
+
+Header
+Main Content
+Hero Section
+Cruise Destinations
+Booking Form
+Contact Section
+Footer
+3. HTML and CSS Analysis
+
+3.1 Header
+
+The header section includes:
+
+A logo image, centered in the header.
+A navigation menu with links to the Home, About, and Contact pages.
+CSS Details:
+
+The header has a dark background (#333) with white text.
+The navigation menu items are displayed inline with white text and underline on hover.
+3.2 Main Content
+
+The main content section includes:
+
+Hero Section: Features a prominent image and a welcoming message.
+Cruise Destinations: Displays popular cruise destinations with images, names, and descriptions.
+Booking Form: Allows users to select a cruise destination, input their location, and calculate the total price.
+Contact Section: Provides contact information and a form for user inquiries.
+CSS Details:
+
+The hero section uses a flexbox layout to align the image and text.
+Destination items are styled as cards with images, titles, and descriptions.
+The booking form is designed for ease of use, with form elements styled for clarity and functionality.
+4. JavaScript Functionality
+
+4.1 Booking Form
+
+The booking form uses JavaScript to:
+
+Calculate Total Price: Based on the selected destination and location fee.
+Confirm Booking: Stores booking details in local storage and redirects to a confirmation page.
+JavaScript Details:
+
+Event listeners are used for the "Calculate Total" and "Confirm Booking" buttons.
+The total price is calculated by adding the base price of the selected destination to a fixed location fee.
+Booking details are saved in local storage and used for confirmation.
+5. User Interface Design
+
+5.1 Design and Layout
+
+Header and Navigation: Simple and clear with contrasting colors for visibility.
+Hero Section: Engaging with a large image and centered text.
+Destinations: Visually appealing with a grid layout for easy comparison of options.
+Booking Form: User-friendly with form fields and buttons clearly labeled.
+Contact Section: Provides essential contact information and a form for user feedback.
+5.2 Accessibility
+
+Color Contrast: Ensures readability with appropriate text and background color contrast.
+Form Labels: Clearly defined for user input.
+Responsive Design: Adaptable to different screen sizes, ensuring usability on various devices.
+6. Conclusion
+
+The KrCruise Booking website is well-structured and designed to offer a smooth user experience. The combination of HTML, CSS, and JavaScript ensures a functional and visually appealing platform for users to explore and book cruise trips. Future enhancements could include additional destinations, user account management, and improved mobile responsiveness.
+
+7. Recommendations
+
+Additional Features: Consider integrating user reviews and ratings for destinations.
+Enhanced Responsiveness: Test and optimize for a wider range of devices and screen sizes.
+Security Improvements: Implement HTTPS and secure data handling practices.
+8. References
+
+HTML Documentation
+CSS Documentation
+JavaScript Documentation
+9. Appendices
+
+Code Snippets: Detailed examples of HTML, CSS, and JavaScript used in the project.
+Screenshots: Visual representation of the website layout and design.
