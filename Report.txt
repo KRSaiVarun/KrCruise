@@ -2,7 +2,7 @@
 KrCruise Booking Website Report
 DATE: October 29, 2024
 COURSE TITLE: Web Development
-STUDENT’S NAME: [Your Name]
+STUDENT’S NAME: KR Sai Varun
 
 HTML Structure
 HTML Tags and Their Purposes:
